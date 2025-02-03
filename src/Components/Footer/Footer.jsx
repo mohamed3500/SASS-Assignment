@@ -24,7 +24,7 @@ export default function Footer() {
           <span className="block text-sm text-gray-500 sm:text-center dark:text-gray-400">
             © 2025{" "}
             <Link href="https://www.facebook.com" className="hover:underline">
-              Mohamed™
+              Mohamed Gamal™
             </Link>
             . All Rights Reserved.
           </span>
