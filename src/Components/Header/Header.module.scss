@@ -1,0 +1,18 @@
+@mixin paddingInX($val) {
+  padding-left: $val;
+  padding-right: $val;
+}
+
+@mixin paddingInY($val) {
+  padding-top: $val;
+  padding-bottom: $val;
+}
+
+ul {
+  li {
+    a {
+      @include paddingInX(1rem);
+      @include paddingInY(0.5rem);
+    }
+  }
+}

@@ -1,0 +1,28 @@
+div {
+  ul {
+    li {
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+@mixin largeText($size, $lineHeight) {
+  font-size: $size;
+  line-height: $lineHeight;
+}
+
+.flexClass {
+  display: flex;
+  align-items: center;
+}
+
+.aClass {
+  @extend .flexClass;
+  padding: 0.5rem;
+}
+
+.formatLargeText {
+  @include largeText(1.125rem, 1.75rem);
+}

@@ -1,0 +1,8 @@
+@function emeraldColor($colorVal, $opaVal) {
+  $theColor: rgba($colorVal, $opaVal);
+  @return $theColor;
+}
+
+.bgColor {
+  background-color: emeraldColor(#10b981, 1);
+}

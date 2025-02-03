@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+
+@function emeraldColor($colorVal, $opaVal) {
+  $theColor: rgba($colorVal, $opaVal);
+  @return $theColor;
+}
+
+.bgColor {
+  background-color: emeraldColor(#10b981, 1);
+}
+
+body {
+  background-color: #f4f2ee;
+}
+
+h1 {
+  font-family: "Pacifico", serif;
+}
