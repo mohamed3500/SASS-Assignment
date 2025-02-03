@@ -5,17 +5,6 @@ import { Link } from "react-router-dom";
 import { MealsContext } from "../../Contexts/MealsContext";
 
 export default function Sidebar() {
-  // const [allMeals, setAllMeals] = useState(null);
-
-  // function getAllMeals() {
-  //   axios
-  //     .get(`https://www.themealdb.com/api/json/v1/1/search.php?s=`)
-  //     .then((res) => {
-  //       setAllMeals(res.data);
-  //     })
-  //     .catch((err) => console.log(err));
-  // }
-
   let { getAllMeals } = useContext(MealsContext);
 
   return (
