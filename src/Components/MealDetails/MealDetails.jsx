@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import styles from "./MealDetails.module.scss";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import { Link, Navigate, useNavigate, useParams } from "react-router-dom";
 import { BeatLoader } from "react-spinners";
+import NotFound from "../NotFound/NotFound";
 
 export default function MealDetails() {
   const [mealDetails, setMealDetails] = useState(null);
+  const navigate = useNavigate();
 
   let text1 = "";
   let text2 = "";
@@ -18,8 +20,11 @@ export default function MealDetails() {
     axios
       .get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`)
       .then((res) => {
-        setMealDetails(res.data.meals[0]);
-        console.log(res.data.meals[0]);
+        if (res.data.meals == "Invalid ID" || res.data.meals == null) {
+          navigate("/");
+        } else {
+          setMealDetails(res.data.meals[0]);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -81,12 +86,15 @@ export default function MealDetails() {
                     Ingredients
                   </h3>
 
-                  {arrWithNumber.map((numb) => {
+                  {arrWithNumber.map((numb, index) => {
                     text1 = "strIngredient" + numb;
                     text2 = "strMeasure" + numb;
                     let x =
                       mealDetails[text1] && mealDetails[text2] ? (
-                        <div className="flex justify-between p-2 border-b-2 last-of-type:border-b-0 ">
+                        <div
+                          className="flex justify-between p-2 border-b-2 last-of-type:border-b-0"
+                          key={index}
+                        >
                           <span>{mealDetails[text1]}</span>
                           <span>{mealDetails[text2]}</span>
                         </div>
