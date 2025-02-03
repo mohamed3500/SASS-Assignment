@@ -13,8 +13,8 @@ export default function DisplayCards() {
           {allMeals?.meals?.length > 0 ? (
             allMeals?.meals?.map((meal, index) => (
               <div className="md:w-1/2 lg:w-1/3 xl:w-1/4 mb-20" key={index}>
-                <div className="item mx-4">
-                  <div className="meal text-center hover:shadow-xl group  hover:scale-105 duration-300 transition-all bg-white p-12 pb-4  rounded-[35px]">
+                <div className="item mx-4 h-full">
+                  <div className="meal text-center hover:shadow-xl group h-full hover:scale-105 duration-300 transition-all bg-white p-12 pb-4  rounded-[35px]">
                     <img
                       src={meal.strMealThumb}
                       className="w-full group-hover:rotate-[360deg] duration-700 transition-all rounded-full drop-shadow-xl  -translate-y-20  shadow-2xl"
