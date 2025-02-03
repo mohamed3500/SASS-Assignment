@@ -8,11 +8,7 @@
   padding-bottom: $val;
 }
 
-ul {
-  li {
-    a {
-      @include paddingInX(1rem);
-      @include paddingInY(0.5rem);
-    }
-  }
+a {
+  @include paddingInX(1rem);
+  @include paddingInY(0.5rem);
 }
