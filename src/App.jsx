@@ -7,6 +7,7 @@ import Layout from "./Components/Layout/Layout";
 import MealByCategory from "./Components/MealByCategroy/MealByCategory";
 import MealsContextProvider, { MealsContext } from "./Contexts/MealsContext";
 import MealDetails from "./Components/MealDetails/MealDetails";
+import NotFound from "./Components/NotFound/NotFound";
 
 function App() {
   const routes = createBrowserRouter([
@@ -17,6 +18,7 @@ function App() {
         { index: true, element: <Home /> },
         { path: "category/:cat", element: <MealByCategory /> },
         { path: "/mealdetails/:mealId", element: <MealDetails /> },
+        { path: "*", element: <NotFound /> },
       ],
     },
   ]);
